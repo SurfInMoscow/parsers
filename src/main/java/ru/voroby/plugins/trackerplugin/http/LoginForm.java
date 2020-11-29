@@ -2,6 +2,8 @@ package ru.voroby.plugins.trackerplugin.http;
 
 import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.voroby.plugins.common.BasicHttpGet;
 import ru.voroby.plugins.common.BasicHttpPost;
 import ru.voroby.plugins.common.CommonHttpClient;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoginForm {
+    private final Logger log = LoggerFactory.getLogger(LoginForm.class);
     private final BasicHttpGet basicHttpGet = new BasicHttpGet();
     private final BasicHttpPost basicHttpPost = new BasicHttpPost();
 
@@ -18,7 +21,7 @@ public class LoginForm {
         String loginPrefix = "tracker";
         String loginUrl = url.concat(loginPrefix);
         String loginPage = basicHttpGet.get(loginUrl, commonHttpClient);
-        System.out.println(loginPage);
+        log.debug(loginPage);
 
         List<NameValuePair> params = new ArrayList<>();
         params.add(new BasicNameValuePair("username", "user@ya.ru"));
