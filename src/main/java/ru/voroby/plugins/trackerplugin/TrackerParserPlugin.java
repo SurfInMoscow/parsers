@@ -17,10 +17,10 @@ import java.util.List;
 public class TrackerParserPlugin {
     private static final Logger log = LoggerFactory.getLogger(TrackerParserPlugin.class);
 
-    private CommonHttpClient commonHttpClient;
-    private LoginForm loginForm;
-    private ProjectDetailsPage projectDetailsPage;
-    private IssuesOnPageParser issuesOnPageParser;
+    private final CommonHttpClient commonHttpClient;
+    private final LoginForm loginForm;
+    private final ProjectDetailsPage projectDetailsPage;
+    private final IssuesOnPageParser issuesOnPageParser;
 
     @Autowired
     public TrackerParserPlugin(CommonHttpClient commonHttpClient, LoginForm loginForm, ProjectDetailsPage projectDetailsPage, IssuesOnPageParser issuesOnPageParser) {

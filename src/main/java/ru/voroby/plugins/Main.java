@@ -6,10 +6,12 @@ import ru.voroby.plugins.trackerplugin.TrackerParserPlugin;
 
 import java.io.IOException;
 
+import static ru.voroby.plugins.Urls.URL_TRACKER;
+
 public class Main {
     public static void main(String[] args) throws IOException {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
         TrackerParserPlugin trackerParserPlugin = ctx.getBean(TrackerParserPlugin.class);
-        trackerParserPlugin.parse(Urls.URL_TRACKER);
+        trackerParserPlugin.parse(URL_TRACKER);
     }
 }
