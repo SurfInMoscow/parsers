@@ -11,6 +11,7 @@ import org.apache.hc.core5.http.io.support.ClassicRequestBuilder;
 import org.apache.hc.core5.net.URIBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URI;
@@ -18,6 +19,7 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class BasicHttpPost {
 
     private final Logger log = LoggerFactory.getLogger(BasicHttpPost.class);

@@ -4,14 +4,22 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.voroby.plugins.common.BasicHttpGet;
 import ru.voroby.plugins.common.CommonHttpClient;
 
 import java.io.IOException;
 
+@Service
 public class ProjectDetailsPage {
-    private final BasicHttpGet basicHttpGet = new BasicHttpGet();
+    private final BasicHttpGet basicHttpGet;
     private String html;
+
+    @Autowired
+    public ProjectDetailsPage(BasicHttpGet basicHttpGet) {
+        this.basicHttpGet = basicHttpGet;
+    }
 
     public void setHtml(String html) {
         this.html = html;
